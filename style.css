@@ -1,0 +1,47 @@
+header {
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title {
+    margin: 0;
+    padding: 30px;
+}
+
+.project-block {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.project-link {
+    display: block;
+    margin-top: 10px;
+}
+
+.project-block img {
+    max-width: 100%;
+}
+
+#footer {
+    height: 200px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 98%;
+}
+
+#footer a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
