@@ -1,0 +1,38 @@
+.summary-container {
+	position: fixed;
+	top: 50%;
+	left: 1%;
+	transform: translateY(-50%);
+	height: 450px;
+	width: 10%;
+	background-color: rgb(230, 236, 236);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	z-index: 3;
+	
+  }
+  
+  .summary-container .scroll-text {
+	font-size: 24px;
+	font-weight: bold;
+	color: black;
+	cursor: pointer;
+	margin-bottom: 10px;
+  }
+  
+  .summary-container .scroll-text:hover {
+	text-decoration: underline;
+  }
+  
+  .summary-text {
+	font-size: 36px;
+	font-weight: bold;
+	color: black;
+	margin-bottom: 10px;
+  }
+  
+  .summary-text:hover {
+	text-decoration: underline;
+  }
