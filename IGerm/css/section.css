@@ -1,0 +1,31 @@
+.main-title {
+	z-index: 100;
+	font-weight: bold;
+	font-size: 50px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+  /* Sections */
+  section {
+	color: black;
+  font-family: Arial, sans-serif;
+  }
+  
+  section h2 {
+	font-weight: bold;
+	font-size: 36px;
+  }
+  
+  section p {
+	font-weight: normal;
+	font-size: 15px;
+  }
+  
+  section img {
+  max-width: 100%;
+  max-height: 70%;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+}
