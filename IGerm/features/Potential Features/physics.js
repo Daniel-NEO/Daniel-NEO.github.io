@@ -9,21 +9,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var engine = Engine.create(),
         world = engine.world;
 
-    var width = Math.min(document.documentElement.clientWidth, 500),
-        height = Math.min(document.documentElement.clientHeight, 600);
+    var width = document.getElementById('world').offsetWidth;
+    var height = Math.min(document.documentElement.clientHeight, 500);
 
-        var render = Render.create({
-            element: document.getElementById('world'),
-            engine: engine,
-            options: {
-                width: 500,
-                height: 500,
-                wireframes: false,
-                background: 'white' // Add this line to set the background color to white
-            }
-        });
+    var render = Render.create({
+        element: document.getElementById('world'),
+        engine: engine,
+        options: {
+            width: width,
+            height: height,
+            wireframes: false,
+            background: 'white' 
+        }
+    });
 
-    var ball = Bodies.circle(width / 2, height/2, 20, {
+    var ball = Bodies.circle(width / 2, height / 2, 20, {
         density: 0.04,
         frictionAir: 0.01,
         restitution: 0.8,
@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         render: { fillStyle: 'blue' }
     });
 
-    var floor = Bodies.rectangle(width / 2, height+390, width+1000, 1000, { 
+    var floor = Bodies.rectangle(width / 2, height + 490, width+1000, 1000, { 
         isStatic: true,
         render: { fillStyle: 'black' } 
     });
@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         render: { fillStyle: 'black' }
     });
 
-    var ceiling = Bodies.rectangle(width / 2, -490, width+1000, 1000, {
+    var ceiling = Bodies.rectangle(width / 2, -990, width+1000, 2000, {
         isStatic: true,
         render: { fillStyle: 'black' }
     });
@@ -65,4 +65,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     World.add(world, [ball, floor, wallLeft, wallRight, ceiling, mouseConstraint]);
     Engine.run(engine);
     Render.run(render);
+
+    window.addEventListener('resize', function(event) {
+        var width = document.getElementById('world').offsetWidth;
+        var height = Math.min(document.documentElement.clientHeight, 500);
+
+        render.canvas.width = width;
+        render.canvas.height = height;
+        render.options.width = width;
+        render.options.height = height;
+
+        Matter.Body.setPosition(floor, { x: width / 2, y: height + 490 });
+        Matter.Body.setPosition(wallRight, { x: width+490 , y: height / 2 });
+        Matter.Body.setPosition(ceiling, { x: width / 2, y: -990 });
+    });
 });
