@@ -1,3 +1,4 @@
+
 header {
     background-color: rgb(255, 255, 255);
     height: 100px;
@@ -10,7 +11,10 @@ header {
     margin: 0;
     padding: 30px;
 }
-
+body
+{
+    margin: 0;
+}
 .project-block {
     margin-bottom: 30px;
     text-align: center;
