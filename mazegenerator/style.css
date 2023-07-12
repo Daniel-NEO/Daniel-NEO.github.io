@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(147, 147, 147);
+}
+
+#maze {
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#controlpanel {
+    height: 10%;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.square {
+    background-color: rgb(147, 147, 147);
+    border: 1px solid rgba(0,0,0);
+}
+
+#submitButton {
+    color: black;
+    background-color: rgb(147, 147, 147);
+}   
+
+#textInput {
+    color: black;
+    background-color: rgb(147, 147, 147);
+}
