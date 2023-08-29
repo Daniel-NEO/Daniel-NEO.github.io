@@ -1,0 +1,26 @@
+if (!borders.includes('u')){
+    specificSquare.style.borderTopColor = "rgb(147, 147, 147)";
+}
+if (!borders.includes('d')){
+    specificSquare.style.borderBottomColor = "rgb(147, 147, 147)";
+}
+if (!borders.includes('l')){
+    specificSquare.style.borderLeftColor = "rgb(147, 147, 147)";
+}
+if (!borders.includes('r')){
+    specificSquare.style.borderRightColor = "rgb(147, 147, 147)";
+}
+
+
+if ((mmi > 0 && !matrix[mmi][mmj].includes('u') && matrix[mmi - 1][mmj].includes('d'))) {
+    matrix[mmi - 1][mmj] = matrix[mmi - 1][mmj].replace(/d/, "");
+}
+if ((mmi < rowNum - 1 && !matrix[mmi][mmj].includes('d') && matrix[mmi + 1][mmj].includes('u'))) {
+    matrix[mmi + 1][mmj] = matrix[mmi + 1][mmj].replace(/u/, "");
+}
+if ((j > 0 && !matrix[mmi][mmj].includes('l') && matrix[mmi][mmj - 1].includes('r'))) {
+    matrix[mmi][mmj - 1] = matrix[mmi][mmj - 1].replace(/r/, "");
+}
+if ((j < squareNum - 1 && !matrix[i][j].includes('r') && matrix[i][j + 1].includes('l'))) {
+    matrix[mmi][mmj + 1] = matrix[mmi][mmj + 1].replace(/l/, "");
+}
