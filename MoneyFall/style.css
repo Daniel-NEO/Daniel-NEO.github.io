@@ -1,0 +1,19 @@
+#money {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+    max-width: 100%;
+    display: none;
+}
+
+body {
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+img.money-clone {
+    opacity: 0.4;
+}

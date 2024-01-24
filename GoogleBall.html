@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gravity Ball</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var ball = {
+  x: 250,
+  y: 250,
+  radius: 50,
+  velocity: {
+    x: 0,
+    y: 0
+  }
+};
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "blue";
+  ctx.fillCircle(ball.x, ball.y, ball.radius);
+
+  // Update the ball's position based on its velocity.
+  ball.x += ball.velocity.x;
+  ball.y += ball.velocity.y;
+
+  // If the ball hits the bottom of the canvas, reset its velocity.
+  if (ball.y + ball.radius > canvas.height) {
+    ball.velocity.y = -ball.velocity.y;
+  }
+}
+
+window.addEventListener("mousedown", function(event) {
+  // When the user clicks on the canvas, set the ball's position to the mouse cursor.
+  ball.x = event.clientX;
+  ball.y = event.clientY;
+});
+
+window.addEventListener("mouseup", function(event) {
+  // When the user releases the mouse button, stop the ball.
+  ball.velocity.x = 0;
+  ball.velocity.y = 0;
+});
+
+window.addEventListener("mousemove", function(event) {
+  // When the user moves the mouse, move the ball.
+  ball.x = event.clientX;
+  ball.y = event.clientY;
+});
+
+setInterval(draw, 20);
+</script>
+</body>
+</html>
